@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catch Da Hearts</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/catch-my-love.css">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="romantic-bg"></div>
+
+  <main class="game-wrapper">
+    <div class="arcade-cabinet">
+      <!-- Arcade Header Bar -->
+      <header class="arcade-header">
+        <div class="stat-box">SCORE: <span id="scoreVal">0</span></div>
+        <div class="game-title-text">Catch Da Hearts</div>
+        <div class="stat-box">TIME: <span id="timerVal">15</span>s</div>
+      </header>
+
+      <!-- Play Field Canvas Area -->
+      <div class="game-field" id="gameField">
+        <div class="basket" id="basket" aria-label="Catch Basket">🧺</div>
+
+        <!-- Overlay Start Screen -->
+        <div class="game-overlay" id="startOverlay">
+          <h2>Catch Da Hearts 💘</h2>
+          <p>Score at least <b>81 points</b> in 15s to unlock the letter!</p>
+          <p class="sub-rule">Ordinary Heart = +5pts | Bonus Golden Heart = +15pts</p>
+          <button id="startBtn" class="romantic-btn" style="margin-top: 16px;">Start Playing 🎮</button>
+        </div>
+
+        <!-- Victory Screen -->
+        <div class="game-overlay" id="victoryOverlay" style="display:none;">
+          <h2 class="vic-title">VICTORY!! 🎉💗</h2>
+          <p>You scored <span id="finalWinScore">85</span> points!</p>
+          <button id="unlockBtn" class="romantic-btn" style="margin-top: 16px;">
+            Enter Birthday Letter 💌
+          </button>
+        </div>
+
+        <!-- Retry Screen (shown once, then goes to letter) -->
+        <div class="game-overlay" id="retryOverlay" style="display:none;">
+          <h2>Better luck next time! 😊</h2>
+          <p>You scored <span id="finalFailScore">0</span> points.</p>
+          <p>Redirecting to the Birthday Letter...</p>
+          <button id="retryBtn" class="romantic-btn" style="margin-top: 16px;">OK</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/common.js"></script>
+  <script src="js/catch-my-love.js"></script>
+</body>
+</html>

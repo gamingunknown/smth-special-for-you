@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final Surprise & Grand Finale ✨</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/final-surprise.css">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="romantic-bg"></div>
+
+  <main class="final-wrapper">
+    <!-- Magical Capsule Orb -->
+    <div id="capsuleStage" class="capsule-stage text-center">
+      <h2 class="capsule-title">You thought that was the end, didn't you? ♡</h2>
+      <div class="magical-capsule" id="capsuleOrb" role="button" aria-label="Open Magical Memory Capsule" tabindex="0">
+        <div class="capsule-core">✨</div>
+      </div>
+      <p style="margin-top:20px; font-weight:600; color:var(--plum);">Tap the Magical Capsule to open it ✨</p>
+    </div>
+
+    <!-- Video Stage -->
+    <div id="videoStage" class="video-stage" style="display:none;">
+      <div class="video-frame">
+        <video id="birthdayVideo" controls preload="metadata">
+          <source src="assets/video/birthday-video.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+      </div>
+    </div>
+
+    <!-- Grand Finale Overlay Screen -->
+    <div id="grandFinale" class="grand-finale-overlay" style="display:none;">
+      <h1 class="finale-title">HAPPY BIRTHDAY, MY LOVE! ♡</h1>
+      <p class="finale-message">
+         Thank you for being the most incredible person in my world. Here is to another year of dumb moments, happiness, laughs, and sweet moments together! 💖✨
+      </p>
+      <div class="finale-signoff">Forever Yours, Farhan! ♡</div>
+    </div>
+  </main>
+
+  <script src="js/common.js"></script>
+  <script src="js/final-surprise.js"></script>
+</body>
+</html>

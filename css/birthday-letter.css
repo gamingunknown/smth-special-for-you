@@ -1,0 +1,109 @@
+.letter-wrapper {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: radial-gradient(ellipse at top, rgba(255, 182, 213, 0.2), transparent 60%), radial-gradient(ellipse at bottom, rgba(167, 139, 250, 0.15), transparent 70%), var(--cream);
+}
+
+.parchment-card {
+  background: linear-gradient(180deg, #FFF9FC 0%, #FFF1F5 100%);
+  border: 1px solid rgba(255, 182, 213, 0.3);
+  box-shadow: 0 25px 50px rgba(89, 54, 92, 0.15);
+  border-radius: 20px;
+  max-width: 680px;
+  width: 100%;
+  padding: clamp(40px, 6vw, 60px);
+  position: relative;
+  overflow: hidden;
+}
+
+.parchment-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 6px;
+  background: linear-gradient(90deg, var(--pastel-pink), var(--deep-lavender), var(--pastel-pink));
+  animation: shimmer 3s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.letter-header {
+  font-family: var(--font-handwriting);
+  font-size: clamp(2.8rem, 6vw, 3.8rem);
+  color: var(--plum);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.typewriter-body {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 2.5vw, 1.25rem);
+  line-height: 1.8;
+  color: var(--plum-dark);
+  min-height: 180px;
+  white-space: pre-wrap;
+  margin-bottom: 30px;
+  padding: 24px;
+  background: rgba(255, 214, 231, 0.3);
+  border-radius: 16px;
+  border-left: 4px solid var(--pastel-pink);
+}
+
+.letter-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 2px solid var(--pastel-pink);
+  color: var(--plum);
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.secondary-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 182, 213, 0.2), transparent);
+  transition: left 0.4s ease;
+}
+
+.secondary-btn:hover, .secondary-btn:focus-visible {
+  background: var(--blush);
+  border-color: var(--deep-lavender);
+  transform: translateY(-2px);
+}
+
+.secondary-btn:hover::before {
+  left: 100%;
+}
+
+@media (max-width: 480px) {
+  .parchment-card {
+    padding: 24px;
+  }
+  .letter-header {
+    font-size: 2rem;
+  }
+  .typewriter-body {
+    font-size: 1rem;
+    min-height: 140px;
+  }
+}

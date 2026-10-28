@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Memories ♡</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/memories.css">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="romantic-bg"></div>
+
+  <main class="scrapbook-wrapper">
+    <header class="scrapbook-header text-center">
+      <h1 class="scrapbook-title">Our Chapter of Memories ♡</h1>
+    </header>
+
+    <!-- Polaroid Photo Scrapbook Grid -->
+    <div class="scrapbook-board" role="region" aria-label="Photo Gallery">
+      <div class="polaroid-card" data-img="assets/images/memory-01.jpeg" tabindex="0" role="button">
+        <div class="tape-sticker"></div>
+        <div class="polaroid-img-box">
+          <img src="assets/images/memory-01.jpeg" alt="Memory 1" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'250\' height=\'250\' viewBox=\'0 0 250 250\'><rect width=\'250\' height=\'250\' fill=\'%23FFD6E7\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%2359365C\' font-size=\'14\'>memory-01.jpeg</text></svg>';">
+        </div>
+      </div>
+
+      <div class="polaroid-card rotate-right" data-img="assets/images/memory-02.jpg" tabindex="0" role="button">
+        <div class="tape-sticker"></div>
+        <div class="polaroid-img-box">
+          <img src="assets/images/memory-02.jpg" alt="Memory 2" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'250\' height=\'250\' viewBox=\'0 0 250 250\'><rect width=\'250\' height=\'250\' fill=\'%23D8C7FF\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%2359365C\' font-size=\'14\'>memory-02.jpg</text></svg>';">
+        </div>
+      </div>
+
+      <div class="polaroid-card rotate-left" data-img="assets/images/memory-03.jpeg" tabindex="0" role="button">
+        <div class="tape-sticker"></div>
+        <div class="polaroid-img-box">
+          <img src="assets/images/memory-03.jpeg" alt="Memory 3" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'250\' height=\'250\' viewBox=\'0 0 250 250\'><rect width=\'250\' height=\'250\' fill=\'%23FFB6D5\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%2359365C\' font-size=\'14\'>memory-03.jpeg</text></svg>';">
+        </div>
+      </div>
+
+      <div class="polaroid-card" data-img="assets/images/memory-04.jpeg" tabindex="0" role="button">
+        <div class="tape-sticker"></div>
+        <div class="polaroid-img-box">
+          <img src="assets/images/memory-04.jpeg" alt="Memory 4" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'250\' height=\'250\' viewBox=\'0 0 250 250\'><rect width=\'250\' height=\'250\' fill=\'%23FFD6E7\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%2359365C\' font-size=\'14\'>memory-04.jpeg</text></svg>';">
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-wrapper text-center">
+      <button id="nextBtn" class="romantic-btn">
+        Lets play a game!
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </main>
+
+  <!-- Polished Photo Lightbox Modal -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close photo view">&times;</button>
+      <img src="" alt="Enlarged Memory" id="lightboxImg">
+      <p id="lightboxCaption" class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/memories.js"></script>
+</body>
+</html>

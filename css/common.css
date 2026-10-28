@@ -1,0 +1,267 @@
+/* ==========================================================================
+   BIRTHDAY WEBSITE - ADVANCED COMMON DESIGN SYSTEM
+   Palette: Blush Pink (#FFD6E7), Pastel Pink (#FFB6D5), Lavender (#D8C7FF),
+   Deep Lavender (#A78BFA), Soft Cream (#FFF9FC), Plum (#59365C)
+   ========================================================================== */
+
+:root {
+  --blush: #FFD6E7;
+  --pastel-pink: #FFB6D5;
+  --lavender: #D8C7FF;
+  --deep-lavender: #A78BFA;
+  --cream: #FFF9FC;
+  --plum: #59365C;
+  --plum-dark: #3B223E;
+  --gold-accent: #FFD700;
+  --white: #FFFFFF;
+  --shadow-soft: 0 10px 30px rgba(89, 54, 92, 0.12);
+  --shadow-deep: 0 20px 50px rgba(89, 54, 92, 0.22);
+  --shadow-glow: 0 0 25px rgba(255, 182, 213, 0.6);
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-handwriting: 'Caveat', 'Dancing Script', cursive;
+  --font-sans: 'Poppins', 'Nunito', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: var(--cream);
+  color: var(--plum);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Default cursor (no custom heart cursor) */
+@media (min-width: 768px) {
+  body {
+    cursor: auto;
+  }
+  button, a, input, select, textarea, .interactive {
+    cursor: pointer;
+  }
+}
+
+/* Layered Animated Background */
+.romantic-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: -10;
+  background: linear-gradient(135deg, #FFE4F0 0%, #E6DCFF 45%, #FFF0F7 100%);
+  background-size: 300% 300%;
+  animation: gradientShift 18s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Ambient Lighting Glow Orbs */
+.bg-glow-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -5;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.bg-glow-orb-1 {
+  top: -10%;
+  left: -10%;
+  width: min(50vw, 400px);
+  height: min(50vw, 400px);
+  background: radial-gradient(circle, rgba(255, 182, 213, 0.8) 0%, transparent 70%);
+  animation: orbFloat 14s ease-in-out infinite alternate;
+}
+
+.bg-glow-orb-2 {
+  bottom: -10%;
+  right: -10%;
+  width: min(60vw, 450px);
+  height: min(60vw, 450px);
+  background: radial-gradient(circle, rgba(167, 139, 250, 0.6) 0%, transparent 70%);
+  animation: orbFloat 18s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes orbFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(40px, -40px) scale(1.15); }
+}
+
+/* Floating Hearts & Sparkles Layer */
+.floating-particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  bottom: -40px;
+  opacity: 0;
+  animation: particleUp linear infinite;
+}
+
+.particle-heart {
+  background: rgba(255, 182, 213, 0.5);
+  clip-path: path('M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z');
+}
+
+.particle-star {
+  background: rgba(216, 199, 255, 0.8);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+@keyframes particleUp {
+  0% { transform: translateY(0) rotate(0deg) scale(0.6); opacity: 0; }
+  15% { opacity: 0.8; }
+  85% { opacity: 0.8; }
+  100% { transform: translateY(-110vh) rotate(360deg) scale(1.2); opacity: 0; }
+}
+
+/* Music Toggle Button */
+.music-toggle {
+  position: fixed;
+  top: clamp(12px, 3vh, 24px);
+  right: clamp(12px, 3vw, 24px);
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 182, 213, 0.8);
+  border-radius: 50px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 25px rgba(89, 54, 92, 0.15);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--plum);
+  cursor: pointer;
+}
+
+.music-toggle:hover {
+  background: var(--white);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(167, 139, 250, 0.3);
+}
+
+.music-toggle:focus-visible {
+  outline: 3px solid var(--deep-lavender);
+  outline-offset: 3px;
+}
+
+.music-toggle .icon {
+  font-size: 1.1rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.music-toggle:hover .icon {
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* Glassmorphism Card Component */
+.glass-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: clamp(18px, 4vw, 28px);
+  box-shadow: var(--shadow-deep);
+  padding: clamp(24px, 5vw, 48px);
+  position: relative;
+  z-index: 10;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Primary Romantic Button */
+.romantic-btn {
+  background: linear-gradient(135deg, var(--pastel-pink) 0%, var(--deep-lavender) 100%);
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
+  padding: clamp(12px, 2.5vw, 16px) clamp(24px, 4vw, 36px);
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(167, 139, 250, 0.4);
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.romantic-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transition: left 0.6s ease;
+}
+
+.romantic-btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(167, 139, 250, 0.6);
+  background: linear-gradient(135deg, var(--deep-lavender) 0%, var(--pastel-pink) 100%);
+}
+
+.romantic-btn:hover::before {
+  left: 100%;
+}
+
+.romantic-btn:focus-visible {
+  outline: 3px solid var(--deep-lavender);
+  outline-offset: 3px;
+}
+
+.romantic-btn:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* Accessibility & Mobile Adjustments */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .romantic-btn {
+    width: 100%;
+  }
+  .music-toggle {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+}

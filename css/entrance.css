@@ -1,0 +1,98 @@
+.entrance-wrapper {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.entrance-card {
+  max-width: 620px;
+  width: 100%;
+  text-align: center;
+  animation: cardAppear 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cardAppear {
+  from { opacity: 0; transform: translateY(40px) scale(0.94); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.glowing-orb-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.pulse-ring {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 182, 213, 0.6);
+  animation: pulseRingAnim 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulseRingAnim {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.25); opacity: 0.2; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.glowing-orb {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 35px rgba(255, 182, 213, 0.8), 0 0 70px rgba(167, 139, 250, 0.4);
+  animation: floatOrb 3s ease-in-out infinite alternate;
+  z-index: 2;
+}
+
+@keyframes floatOrb {
+  0% { transform: translateY(0) scale(1); box-shadow: 0 0 30px rgba(255, 182, 213, 0.8); }
+  100% { transform: translateY(-8px) scale(1.06); box-shadow: 0 0 50px rgba(255, 182, 213, 1), 0 0 90px rgba(167, 139, 250, 0.6); }
+}
+
+.entrance-title {
+  font-family: var(--font-handwriting);
+  font-size: clamp(3rem, 7vw, 4.2rem);
+  color: var(--plum);
+  margin-bottom: 16px;
+  text-shadow: 0 4px 15px rgba(167, 139, 250, 0.25);
+  line-height: 1.1;
+}
+
+.entrance-subtitle {
+  font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+  color: var(--plum-dark);
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+
+.hidden-message {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  font-family: var(--font-handwriting);
+  font-size: clamp(1.4rem, 3.5vw, 1.7rem);
+  color: var(--deep-lavender);
+  margin-bottom: 24px;
+  transition: all 0.6s ease;
+}
+
+.hidden-message.show {
+  opacity: 1;
+  max-height: 100px;
+}
+
+.button-wrapper {
+  margin-top: 10px;
+}
